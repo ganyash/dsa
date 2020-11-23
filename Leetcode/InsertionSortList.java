@@ -29,8 +29,9 @@ class Solution {
         ListNode temp = head;
         while (nodeToBeSorted != null) {
 
-            ListNode placedPosition = placeElementInRightPosition(nodeToBeSorted, head);
-            if (placedPosition != nodeToBeSorted) {
+            if (head != nodeToBeSorted && nodeToBeSorted.val < temp.val) {
+                ListNode placedPosition = placeElementInRightPosition(nodeToBeSorted, head);
+
                 temp.next = nodeToBeSorted.next;
                 if (placedPosition == null) {
                     nodeToBeSorted.next = head;
